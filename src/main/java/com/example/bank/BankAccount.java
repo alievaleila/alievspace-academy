@@ -103,28 +103,31 @@ public class BankAccount {
         }
     }
 
-    public void transferMoney(BankAccount targetAccount, double amount) {
+    public boolean transferMoney(BankAccount targetAccount, double amount) {
 
         if (!this.isActive) {
             System.out.println("Operation was rejected. Inactive account.");
-            return;
+            return false;
         }
 
         if (targetAccount == null || !targetAccount.isActive()) {
             System.out.println("Transfer failed: Recipient account not found or inactive.");
-            return;
+            return false;
         }
 
         if (amount < 0) {
             System.out.println("Transfer failed: Negative amount.");
-            return;
+            return false;
         }
 
         if (withdraw(amount)) {
             targetAccount.deposit(amount);
-            System.out.println("Successful Transfer: " + amount + " AZN has been transferred to the account of " + targetAccount.getHolderName() + ".");
+            System.out.println("Successful Transfer: " + amount + " AZN has been transferred to the account of "
+                    + targetAccount.getHolderName() + ".");
+            return true;
         } else {
             System.out.println("Transfer failed: Insufficient funds.");
+            return false;
         }
     }
 }
