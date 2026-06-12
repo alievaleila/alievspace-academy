@@ -1,4 +1,4 @@
-package com.example;
+package com.example.smart_parking;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.example;
+package com.example.smart_parking;
 
 import java.util.ArrayList;
 
