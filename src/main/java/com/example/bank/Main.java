@@ -75,5 +75,7 @@ public class Main {
 
         ArrayList<String> frozenAccounts = bakuBranch.getFrozenAccounts();
         System.out.println("List of frozen accounts: " + frozenAccounts);
+
+
     }
 }
